@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1280px">
+    <title>Latis-Fake Liquor Tester</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            /* border: 3px solid rebeccapurple; */
+        }
+        body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .nav{
+            width: 80%;
+            height: 40px;
+        }
+        .nav img{
+            width: 11.8vw;
+            min-width: 135px;
+        }
+        .phone-no a{
+            text-decoration: none;
+            color: #d4af37;
+            font-size: 16.5px;
+            font-weight: bolder;
+            letter-spacing: 0.5px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .banner{
+            width: 80%;
+            margin: auto;
+            display: flex;
+            color: #424242;
+        }
+        .info{
+            width: 50%;
+            margin-top: 215px;
+        }
+        .golden-text{
+            color: #d4af37;
+        }
+        .code{
+            background-color: #d4af3715;
+            border: 2px solid #d4af37;
+            border-radius: 50% 0 0 50%;
+            padding: 7px 10px;
+        }
+        .mobile-no{
+            border: 2px solid #d4af37;
+            background-color: #d4af3715;
+            border-right: transparent;
+            border-left: transparent;
+            padding: 0 10px;
+        }
+        input:focus,button:focus-visible{
+            outline: 0px !important;
+        }
+        .btn-pre{
+            min-width: 120px;
+            color: white;
+            background-color: #d4af37;
+            padding: 8px 12px 8px 12px;
+            border-radius: 22px;
+            border: 2px solid #d4af37;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            font-family: 'Nunito Sans', sans-serif;
+            outline: none;
+            margin-left: -30px;
+        }
+        .jar{
+            position: sticky;
+            top: 100px;
+        }
+        .font-big{
+            font-size: 55px;
+        }
+        .for-margin{
+            margin-top: 240px;
+        }
+        .second-sec{
+            width: 100%;
+            padding: 50px 0vw 50px 10vw;
+            background-color: rgba(119, 119, 119, 0.103);
+            display: flex;
+            justify-content: space-between;
+        }
+        .second-sec iframe{
+            width: 550px;
+            height: 500px;
+            border-radius: 20px;
+        }
+        .second-info{
+            width: 50vw;
+            height: max-content;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: end;
+            font-weight: bolder;
+            font-size: 22px;
+            margin-left: 5vw;
+            padding: 75px 53px;
+            box-shadow: 0px 0px 20px #ccd9ee8c;
+            background-color: #d4af3715;
+        }
+        .about{
+            width: 100%;
+            background-color: #d4af3715;
+            padding: 50px 10vw;
+        }
+        .about-head{
+            width: 5%;
+            font-size: 20px;
+            font-weight: bolder;
+            margin: auto;
+            text-align: center;
+        }
+        .about-head::after{
+            content: "d";
+            color: transparent;
+            /* position: absolute; */
+            width: 50px;
+            display: block;
+            height: 5px;
+            /* left: 33px; */   
+            border-radius: 10px;
+            /* top: 5px; */
+            background: #d4af37;
+            margin-left: 5px;
+        }
+        .cards{
+            display: flex;
+            width: 100%;
+            padding: 20px 0;
+        }
+        .card-inn{
+            width: 25%;
+        }
+        .card-inn img{
+            display: flex;
+            width: 200px;
+            height: 200px;
+            margin: auto;
+        }
+        .feat-head{
+            width: 5%;
+            font-size: 20px;
+            font-weight: bolder;
+            margin: auto;
+            text-align: center;
+            margin: 50px auto;
+        }
+        .feat-head::after{
+            content: "d";
+            color: transparent;
+            /* position: absolute; */
+            width: 84px;
+            display: block;
+            height: 5px;
+            /* left: 33px; */   
+            border-radius: 10px;
+            /* top: 5px; */
+            background: #d4af37;
+            margin-left: 5px;
+        }
+        .specification{
+            display: flex;
+            width: 100%;
+            background-color: rgba(119, 119, 119, 0.103);
+            /* padding: 50px 0; */
+            justify-content: space-between;
+        }
+        .test-img{
+            width: 50%;
+        }
+        .test-img img{
+            width: 90%;
+        }
+        .speci-points{
+            width: 50%;
+        }
+        h6,h5,h2,h4{
+            font-weight: bolder;
+        }
+        .speci-points{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .points{
+            width: 100%;
+            background-color: #d4af3715;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        .spefi-head{
+            width: 7%;
+            font-size: 20px;
+            font-weight: bolder;
+            margin: auto;
+            text-align: center;
+            margin: 50px auto;
+        }
+        .spefi-head::after{
+            content: "d";
+            color: transparent;
+            /* position: absolute; */
+            width: 109px;
+            display: block;
+            height: 5px;
+            /* left: 33px; */   
+            border-radius: 10px;
+            /* top: 5px; */
+            background: #d4af37;
+            margin-left: 5px;
+        }
+        .spefi-row{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .spefi-cards{
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            text-align: center;
+            padding: 60px 0 100px 0;
+        }
+        .how-to{
+            display: flex;
+            width: 100%;
+            padding: 50px 0;
+            justify-content: space-between;
+            background-color: #d4af3715;
+        }
+        .how-points{
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            padding: 0 30px;
+            justify-content: center;
+            line-height: 50px;
+        }
+        .how-images{
+            width: 25%;
+            margin: auto;
+        }
+        .how-images img{
+            width: 50%;
+            margin: auto;
+            display: flex;
+        }
+        .team-head{
+            width: 10%;
+            font-size: 20px;
+            font-weight: bolder;
+            margin: auto;
+            text-align: center;
+            margin: 130px auto 50px auto;
+        }
+        .team-head::after{
+            content: "d";
+            color: transparent;
+            /* position: absolute; */
+            width: 130px;
+            display: block;
+            height: 5px;
+            /* left: 33px; */   
+            border-radius: 10px;
+            /* top: 5px; */
+            background: #d4af37;
+            margin-left: 11px;
+        }
+        .team-quote{
+            width: 80%;
+            margin: auto;
+            margin-bottom: 130px;
+        }
+        .footer{
+            margin: auto;
+            width: 100%;
+            background-color: #d4af3767;
+
+        }
+        .section{
+            display: flex;
+            width: 75%;
+            justify-content: space-between;
+            margin: auto;
+            align-items: center;
+            text-align: center;
+            padding: 50px 0;
+        }
+        .mail a{
+            text-decoration: none;
+            color: black;
+        }
+        @media screen and (max-width: 450px){
+            .nav{
+                width: 100%;
+                margin: 0 !important;
+                padding: 8px;
+            }
+            .banner{
+                width: 90%;
+                flex-direction: column-reverse;
+            }
+            .info{
+                width: 100%;
+                text-align: center;
+            }
+            .w-50{
+                width: 100% !important;
+            }
+            .jar{
+                position: relative;
+                width: 100%;
+            }
+            .for-margin{
+                margin: 0;
+                width: 100%;
+            }
+            .mobile-no {
+                padding: 0px 5px;
+            }
+            .font-big{
+                font-size: 40px;
+            }
+            .second-sec{
+                padding: 0;
+                flex-direction: column;
+            }
+            .second-sec iframe{
+                width: 100%;
+                margin-top: 5vh;
+            }
+            .second-info{
+                width: 100%;
+                margin: 0;
+                padding: 5vh 10vw;
+                margin-bottom: 10vh;
+                justify-content: space-between;
+            }
+            .cards{
+                flex-direction: column;
+            }
+            .card-inn{
+                width: 100%;
+            }
+            .about-head{
+                margin: auto;
+                width: 100%;
+            }
+            .about-head::after{
+                display: flex;
+                margin: auto;
+            }
+            .feat-head{
+                width: 100%;
+                margin: 30px auto;
+            }
+            .feat-head::after{
+                display: flex;
+                margin: auto;
+            }
+            .spefi-head{
+                width: 100%;
+                margin: 50px auto;
+            }
+            .spefi-head::after{
+                display: flex;
+                margin: auto;
+            }
+            .specification{
+                flex-direction: column;
+            }
+            .test-img{
+                width: 100%;
+            }
+            .speci-points{
+                width: 100%;
+            }
+            .points{
+                text-align: center;
+            }
+            .spefi-row{
+                flex-direction: column;
+            }
+            .spefi-cards {
+                width: 100%;
+                padding: 20px;
+            }
+            .how-to{
+                flex-direction: column;
+            }
+            .how-points{
+                width: 100%;
+                padding: 10px;
+            }
+            .how-images{
+                width: 100%;
+            }
+            .how-images img{
+                width: 80%;
+            }
+            .section{
+                width: 100%;
+                flex-direction: column;
+            }
+            .team-head{
+                width: 100%;
+            }
+            .team-head::after{
+                margin: auto;
+            }
+        }
+        @media screen and (max-width: 360px){
+            .mobile-no{
+                margin-right: -30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="nav d-flex justify-content-between mx-auto align-items-center mt-3">
+        <img  src="./logo_png.jpg" alt="">
+        <div class="phone-no"> <a href="tel:+918588006453">Call: +91 8588006453</a></div>
+    </div>
+    <div class="banner">
+        <div class="info">
+            <h1 class="font-weight-bold font-big">Latis</h1>
+            <h2 class="mt-3">Test if <span class="golden-text">Your Drink</span> is genuine</h2>
+            <form action="">
+                <div class="d-flex mt-3">
+                    <div class="code">+91</div>
+                    <input class="mobile-no " placeholder="Mobile no."  minlength="10" maxlength="10">
+                    <button class="btn-pre">Pre-Book</button>
+                </div>
+            </form>
+            <div class="mt-3">1835 already pre-booked</div>
+            <img class="for-margin" src="./phone.jpg" alt="">
+        </div>
+        <div class="w-50 mx-auto ">
+            <img class="jar mx-auto d-flex" src="./glass1.jpg" alt="">
+        </div>
+    </div>
+    <div class="second-sec">
+        <iframe width="956" height="538" src="https://www.youtube.com/embed/WpZ8egkEJMA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="second-info">
+            There's a 1 in 8 chance your drink is adulterated with dirty water or cheap liquor like this.
+        </div>    
+    </div>
+    <div class="about">
+        <div class="about-head">About</div>
+        <div class="mt-4">Made in India and crafted with life in mind, Latis is ideal for those who don’t compromise on quality. Easily test your drinks and ensure nothing comes in the way of your celebrations, not even a doubt. Latis invites you to feel absolute joie de vivre with safety & confidence of the luxury you deserve.</div>
+        <h6 class="mt-4">Latis has been built in collaboration along with India’s leading liquor companies to safeguard consumers against the adulterated alcohol.</h6>
+        <div class="cards">
+            <div class="card-inn">
+                <img src="./1(1).png" alt="">
+                <h6 class="text-center">Durable</h6>
+            </div>
+            <div class="card-inn">
+                <img src="./2(1).png" alt="">
+                <h6 class="text-center">Portable</h6>
+            </div>
+            <div class="card-inn">
+                <img src="./3(1).png" alt="">
+                <h6 class="text-center">Rechargable</h6>
+            </div>
+            <div class="card-inn">
+                <img src="./4.png" alt="">
+                <h6 class="text-center">Dependable</h6>
+            </div>
+        </div>
+    </div>
+    <div class="feat-head">
+        FEATURES
+    </div>
+    <div class="specification">
+        <div class="test-img">
+            <img src="./chain.png" alt="">
+        </div>
+        <div class="speci-points">
+            <div class="points"><h5>Easy Dip Testing</h5></div>
+            <div class="points"><h5>Instant results on smartphone</h5></div>
+            <div class="points"><h5>Supports all whiskeys, vodka and rum</h5></div>
+            <div class="points"><h5>Ultra-compact : Carry Anywhere</h5></div>
+        </div>
+    </div>
+    <div class="spefi-head">Specification</div>
+    <div class="spefi-row">
+        <div class="spefi-cards">
+            <h2>Connection</h2>
+            <h4>Bluetooth</h4>
+        </div>
+        <div class="spefi-cards">
+            <h2>Testing Time</h2>
+            <h4>2 secs</h4>
+        </div>
+        <div class="spefi-cards">
+            <h2>Dimensions</h2>
+            <h4>8x1.8x1.8cms</h4>
+        </div>
+        <div class="spefi-cards">
+            <h2>Weight</h2>
+            <h4>50g</h4>
+        </div>
+        <div class="spefi-cards">
+            <h2>Coil Cell life</h2>
+            <h4>8000 tests</h4>
+        </div>
+    </div>
+    <div class="how-to">
+        <div class="how-points">
+            <h2>How to use?</h2>
+            <p>
+                1) Connect Latis to your smartphone. <br>
+                2) Select the drink that you want to test on the smartphone app. <br>
+                3) Dip Latis in your drink upto the golden ring. <br>
+                4) Results automatically show up within 2 seconds. <br>
+            </p>
+        </div>
+        <div class="how-images"><img src="./how-image.png" alt=""></div>
+        <div class="how-images"><img src="./how-image2.png" alt=""></div>
+    </div>
+    <div class="team">
+        <div class="team-head">
+            The Latis Team
+        </div>
+        <div class="team-quote">
+            <i class="fa fa-quote-left"></i>
+            Our team is a mix of IITians, optical spectroscopy experts, and enthusiasts. Our team is behind the development of India's first Raman Spectrometer. Previously, we have developed portable spectrometers, fluorometers and Raman Spectrometer. We are experts in optics and radiation. We have developed Latis leveraging our know-how in spectroscopy and alcohol over the last 6 years. If you have any thoughts or concerns, please write to us. We’d be very happy to hear from you. 
+            <i class="fa fa-quote-right"></i>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="section">
+            <div class="mobile">
+                <i class="fas fa-mobile-alt"></i>
+                <p>+91 8588006453</p>
+            </div>
+            <div class="loc">
+                <i class='fas fa-map-marker-alt'></i>
+                <p>Noida</p>
+            </div>
+            <div class="mail">
+                <i class="far fa-envelope"></i>
+                <p><a href="mailto:info@testright.in">info@testright.in</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+</html>
